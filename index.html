@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exames Teóricos Resolvidos — 25 exames do Código da Estrada</title>
+<style>
+:root{--green:#0B8F2A;--deep:#065F1C;--orange:#F26B0F;--yellow:#FFD60A;--bg:#F3FBF4;--card:#fff;--text:#0F1F14;--muted:#4A5B4F;--line:#D3E8D7;--ok:#DDF5E2;--bad:#FDE3E1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:88px}
+h1,h2,h3{line-height:1.1;margin:0}
+.w{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:40px 0}
+h2{font-size:clamp(26px,7vw,36px);font-weight:800;margin-bottom:14px}
+p{margin:0 0 14px}
+.hero{background:var(--green);color:#fff;padding:32px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(32px,9vw,50px);font-weight:800;margin-bottom:14px}
+.hero p{font-size:19px;color:#E9FBEC}
+.tag{display:inline-block;background:#fff;color:var(--deep);font-weight:700;font-size:14px;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+.cta{display:inline-block;background:var(--orange);color:#fff;font-weight:700;font-size:19px;padding:18px 28px;border-radius:99px;text-decoration:none;box-shadow:0 5px 0 #B84C05}
+.cta:active{transform:translateY(3px);box-shadow:0 2px 0 #B84C05}
+.cta:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.price{display:flex;align-items:baseline;gap:12px;margin:20px 0 18px;flex-wrap:wrap}
+.price b{font-size:56px;font-weight:800;color:var(--yellow)}
+.price span{color:#E9FBEC}
+.bookwrap{display:flex;justify-content:center;padding:34px 0 0}
+.bookwrap img{width:min(340px,80%);height:auto;border-radius:8px;box-shadow:0 18px 34px rgba(0,0,0,.4);display:block;margin-bottom:-24px}
+.road{height:46px;background:#2B2F36;position:relative}
+.road:before{content:"";position:absolute;left:0;right:0;top:21px;height:4px;background:repeating-linear-gradient(90deg,#fff 0 36px,transparent 36px 72px)}
+.quiz{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:20px;margin-top:10px}
+.quiz h3{font-size:21px;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:left;font:500 17px/1.35 system-ui,sans-serif;color:var(--text);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:14px;margin-top:10px;cursor:pointer}
+.opt.right{background:var(--ok);border-color:var(--green);font-weight:700}
+.opt.wrong{background:var(--bad);border-color:#D62828}
+.why{display:none;background:#E8F6EA;border-radius:12px;padding:14px;margin-top:12px;font-size:16px}
+.why.on{display:block}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:14px 0 14px 38px;border-bottom:1px solid var(--line);position:relative}
+.list li:last-child{border:0}
+.list li:before{content:"✓";position:absolute;left:0;top:13px;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:15px}
+.list b{display:block;font-size:18px}
+.list span{color:var(--muted);font-size:16px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 58px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;text-align:center;line-height:42px}
+.steps li:after{content:"";position:absolute;left:20px;top:46px;bottom:4px;border-left:3px dashed var(--line)}
+.steps li:last-child:after{display:none}
+.steps b{display:block;font-size:18px}
+.offer{background:var(--green);color:#fff;border-radius:22px;padding:28px 22px;text-align:center}
+.offer .price{justify-content:center}
+.offer p{margin-inline:auto;color:#E9FBEC}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{font-weight:700;cursor:pointer;font-size:18px}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{padding:10px 0 30px;color:var(--muted);font-size:14px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:2px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:5}
+.bar strong{font:800 24px/1 system-ui,sans-serif}
+.bar small{display:block;color:var(--muted);font-size:13px}
+.bar .cta{padding:15px 22px;font-size:17px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1710;--card:#13241A;--text:#EEF6F0;--muted:#A4B7A9;--line:#24402D;--ok:#12331B;--bad:#3A1816}.why{background:#17301F}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="w">
+<span class="tag">Código da Estrada em Moçambique</span>
+<h1>Estude com método. Treine com exames resolvidos e entre na prova com confiança.</h1>
+<p>Muita gente reprova por nunca ter treinado perguntas parecidas com as do exame. Aqui tem 25 exames completos, com a resposta certa e a explicação de cada pergunta.</p>
+<div class="price"><b>197 MT</b><span>pagamento único por e-Mola</span></div>
+<a class="cta" href="https://wa.me/258835165849?text=Quero%20receber%20o%20e-book%20Exames%20Te%C3%B3ricos%20Resolvidos" target="_blank" rel="noopener">Quero receber agora</a>
+<div class="bookwrap"><img src="file_00000000b2708211acfa6c7bb952e7f7.png" alt="Capa do e-book Exames Teóricos Resolvidos: 25 exames com respostas explicadas"></div>
+</div><div class="road"></div></header>
+
+<main class="w">
+<section><h2>Experimente uma pergunta</h2>
+<p>É assim que cada questão do e-book funciona. Toque na resposta que acha certa.</p>
+<div class="quiz" id="q">
+<h3>Ao aproximar-se de um sinal STOP, o condutor deve:</h3>
+<button class="opt" data-ok="0">Abrandar e passar se não vier ninguém</button>
+<button class="opt" data-ok="1">Parar completamente e só avançar quando for seguro</button>
+<button class="opt" data-ok="0">Buzinar e passar com cuidado</button>
+<div class="why" id="why"><b>Explicação:</b> o STOP obriga a parar totalmente, mesmo sem outros veículos, e a ceder a passagem a quem circula na via principal. Abrandar não chega.</div>
+</div></section>
+
+<section><h2>O que vai receber</h2>
+<ul class="list">
+<li><b>25 exames com 10 perguntas cada</b><span>250 questões para treinar no seu ritmo.</span></li>
+<li><b>Resposta certa e explicação em todos</b><span>Percebe o porquê, não decora só a letra.</span></li>
+<li><b>Sinais de trânsito desenhados</b><span>STOP, cedência, sentido proibido, semáforos e outros.</span></li>
+<li><b>Gabarito rápido no fim de cada exame</b><span>Confira os acertos em segundos e anote a pontuação.</span></li>
+<li><b>Plano de estudo e dicas para o dia da prova</b><span>Um exame por dia e já passou por todos os temas.</span></li>
+</ul></section>
+
+<section><h2>Como receber</h2>
+<ol class="steps">
+<li><b>Toque no botão</b>Abra uma conversa no WhatsApp com a nossa equipa.</li>
+<li><b>Pague por e-Mola</b>Combinamos o valor e o número para o pagamento na conversa.</li>
+<li><b>Receba o PDF e comece hoje</b>Assim que o pagamento for confirmado, o PDF chega no WhatsApp.</li>
+</ol></section>
+
+<section><div class="offer">
+<h2>Exames Teóricos Resolvidos</h2>
+<p>25 exames, 250 questões, explicações e gabaritos. Pagamento único por e-Mola.</p>
+<div class="price"><b>197 MT</b></div>
+<a class="cta" href="https://wa.me/258835165849?text=Quero%20receber%20o%20e-book%20Exames%20Te%C3%B3ricos%20Resolvidos" target="_blank" rel="noopener">Quero receber agora</a>
+</div></section>
+
+<section><h2>Perguntas frequentes</h2>
+<details><summary>Em que formato recebo o e-book?</summary><p>Em PDF, enviado por WhatsApp. Pode abrir no telemóvel, sem instalar nada.</p></details>
+<details><summary>Como pago?</summary><p>Por e-Mola, um pagamento único de 197 MT. Os dados são enviados na conversa de WhatsApp.</p></details>
+<details><summary>Quanto tempo demora a receber?</summary><p>Assim que o pagamento for confirmado, o PDF é enviado na mesma conversa.</p></details>
+</section>
+</main>
+
+<footer><div class="w">Exames Teóricos Resolvidos · Material de estudo para o Código da Estrada.</div></footer>
+
+<div class="bar"><div><strong>197 MT</strong><small>Pague por e-Mola</small></div>
+<a class="cta" href="https://wa.me/258835165849?text=Quero%20receber%20o%20e-book%20Exames%20Te%C3%B3ricos%20Resolvidos" target="_blank" rel="noopener">Quero receber</a></div>
+
+<script>
+document.querySelectorAll('#q .opt').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('#q .opt').forEach(function(o){o.classList.remove('right','wrong')});
+    b.classList.add(b.dataset.ok==='1'?'right':'wrong');
+    document.querySelector('#q .opt[data-ok="1"]').classList.add('right');
+    document.getElementById('why').classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
